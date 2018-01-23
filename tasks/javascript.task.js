@@ -1,9 +1,4 @@
-module.exports = (gulp) => {
-    const browserSync = require('browser-sync').create();
-    const babel = require('gulp-babel');
-    const concat = require('gulp-concat');
-    const uglify = require('gulp-uglify');
-
+module.exports = (gulp, browserSync, babel, concat, uglify) => {
     gulp.task('js:prod', () => {
         return gulp.src('./src/scripts/**/*.js')
             .pipe(babel())

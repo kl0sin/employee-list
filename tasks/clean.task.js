@@ -1,6 +1,4 @@
-module.exports = (gulp) => {
-    const clean = require('gulp-clean');
-
+module.exports = (gulp, clean) => {
     gulp.task('clean', () => {
         return gulp.src('./dist/*', {read: false})
             .pipe(clean());

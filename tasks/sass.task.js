@@ -1,10 +1,4 @@
-module.exports = (gulp) => {
-    const browserSync = require('browser-sync').create();
-    const sourceMaps = require('gulp-sourcemaps');
-    const concatCss = require('gulp-concat-css');
-    const cssNano = require('gulp-cssnano');
-    const sass = require('gulp-sass');
-
+module.exports = (gulp, browserSync, sourceMaps, concatCss, cssNano, sass) => {
     gulp.task('sass', () => {
         return gulp.src('./src/styles/**/*.scss')
             .pipe(sourceMaps.init())

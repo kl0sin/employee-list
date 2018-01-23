@@ -1,5 +1,16 @@
-const gulp = require('gulp');
 const browserSync = require('browser-sync').create();
+const clean = require('gulp-clean');
+const gulp = require('gulp');
+const babel = require('gulp-babel');
+const concat = require('gulp-concat');
+const uglify = require('gulp-uglify');
+const sourceMaps = require('gulp-sourcemaps');
+const concatCss = require('gulp-concat-css');
+const cssNano = require('gulp-cssnano');
+const sass = require('gulp-sass');
+const htmlmin = require('gulp-htmlmin');
+const inject = require('gulp-inject');
+const runSequence = require('run-sequence');
 
 gulp.task('default', ['serve']);
 
@@ -12,9 +23,9 @@ gulp.task('serve', ['build'], () => {
     gulp.watch('src/scripts/**/*.js', ['js', 'inject']);
 });
 
-require('./tasks/build.task')(gulp);
-require('./tasks/html.task')(gulp);
-require('./tasks/sass.task')(gulp);
-require('./tasks/javascript.task')(gulp);
-require('./tasks/inject.task')(gulp);
-require('./tasks/clean.task')(gulp);
+require('./tasks/build.task')(gulp, runSequence);
+require('./tasks/html.task')(gulp, browserSync, htmlmin);
+require('./tasks/sass.task')(gulp, browserSync, sourceMaps, concatCss, cssNano, sass);
+require('./tasks/javascript.task')(gulp, browserSync, babel, concat, uglify);
+require('./tasks/inject.task')(gulp, inject);
+require('./tasks/clean.task')(gulp, clean);

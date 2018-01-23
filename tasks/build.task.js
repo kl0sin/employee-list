@@ -1,6 +1,4 @@
-module.exports = (gulp) => {
-    const runSequence = require('run-sequence');
-
+module.exports = (gulp, runSequence) => {
     gulp.task('build', callback => {
         runSequence('clean', 'html', 'sass', 'js', 'inject', callback);
     });

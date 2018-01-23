@@ -1,7 +1,4 @@
-module.exports = (gulp) => {
-    const browserSync = require('browser-sync').create();
-    const htmlmin = require('gulp-htmlmin');
-
+module.exports = (gulp, browserSync, htmlmin) => {
     gulp.task('html', () => {
         return gulp.src('./src/**/*.html')
             .pipe(gulp.dest('./dist'))
