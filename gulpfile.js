@@ -18,7 +18,7 @@ gulp.task('serve', ['build'], () => {
     browserSync.init({
         server: './dist'
     });
-    gulp.watch('src/*.html', ['html']);
+    gulp.watch('src/*.html', ['html', 'inject']);
     gulp.watch('src/styles/**/*.scss', ['sass', 'inject']);
     gulp.watch('src/scripts/**/*.js', ['js', 'inject']);
 });
