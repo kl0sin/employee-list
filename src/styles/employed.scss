@@ -61,6 +61,7 @@ $white: #fff;
     background-color: $white;
     padding: 20px;
     &__employee {
+      padding: 5px 0;
       &:before {
         content: 'Ω';
         padding-right: 15px;
