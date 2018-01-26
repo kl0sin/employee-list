@@ -22,6 +22,7 @@ class EmployeeListClass {
         `
     }
     addEmployeeOnClick() {
+        event.preventDefault();
         let employeeValue = document.querySelector('.employed__form__input');
         this.employees.push({name: employeeValue.value});
         this.loadEmployees();
