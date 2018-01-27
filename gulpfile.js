@@ -11,6 +11,7 @@ const sass = require('gulp-sass');
 const htmlmin = require('gulp-htmlmin');
 const inject = require('gulp-inject');
 const runSequence = require('run-sequence');
+const ghPages = require('gulp-gh-pages');
 
 gulp.task('default', ['serve']);
 
@@ -29,3 +30,4 @@ require('./tasks/sass.task')(gulp, browserSync, sourceMaps, concatCss, cssNano, 
 require('./tasks/javascript.task')(gulp, browserSync, babel, concat, uglify);
 require('./tasks/inject.task')(gulp, inject);
 require('./tasks/clean.task')(gulp, clean);
+require('./tasks/deploy.task')(gulp, ghPages);
