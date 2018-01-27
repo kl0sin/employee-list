@@ -34,3 +34,5 @@ class EmployeeListClass {
         this.loadEmployees();
     }
 }
+
+module.exports = EmployeeListClass;
