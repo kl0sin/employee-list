@@ -18,7 +18,13 @@ $white: #fff;
   &__form {
     background-color: #fff;
     padding: 20px;
+    .fa-list-alt {
+      font-size: 25px;
+      color: black;
+    }
     &__header {
+      padding-left: 15px;
+      display: inline-block;
       font-size: 25px;
       font-weight: 400;
       line-height: 1.5;
@@ -61,12 +67,21 @@ $white: #fff;
     background-color: $white;
     padding: 20px;
     &__employee {
-      padding: 5px 0;
-      &:before {
-        content: 'Ω';
+      position: relative;
+      padding: 10px 0 5px;
+      border-bottom: 1px solid lightgrey;
+      .fa-user {
         padding-right: 15px;
-        font-weight: 600;
-        font-size: 20px;
+      }
+      .fa-trash {
+        color: lightgrey;
+        position: absolute;
+        right: 10px;
+        transition: .3s;
+        cursor: pointer;
+        &:hover {
+          color: grey;
+        }
       }
     }
   }
