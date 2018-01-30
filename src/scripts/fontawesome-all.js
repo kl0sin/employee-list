@@ -1662,7 +1662,7 @@ var makeIconMasking = function (_ref) {
   var maskInnerGroup = {
     tag: 'g',
     attributes: _extends({}, trans.inner),
-    children: [{ tag: 'path', attributes: _extends({}, mainPath.attributes, trans.path, { fill: 'black' }) }]
+    children: [{ tag: 'path', attributes: _extends({}, mainPath.attributes, trans.output, { fill: 'black' }) }]
   };
   var maskOuterGroup = {
     tag: 'g',
@@ -1717,7 +1717,7 @@ var makeIconStandard = function (_ref) {
         children: [{
           tag: main.icon.tag,
           children: main.icon.children,
-          attributes: _extends({}, main.icon.attributes, trans.path)
+          attributes: _extends({}, main.icon.attributes, trans.output)
         }]
       }]
     });

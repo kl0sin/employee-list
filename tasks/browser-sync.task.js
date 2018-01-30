@@ -1,12 +1,13 @@
 const browserSync = require('browser-sync').create();
+const config = require('./configuration');
 
 module.exports = gulp => {
     gulp.task('browser-sync', () => {
         browserSync.init({
-            server: './dist'
+            server: config.output.path.dist
         });
-        gulp.watch('src/*.html', ['build']);
-        gulp.watch('src/styles/**/*.scss', ['sass', 'inject']);
-        gulp.watch('src/scripts/**/*.js', ['js', 'inject']);
+        gulp.watch(config.entry.html, ['build']);
+        gulp.watch(config.entry.style, ['sass', 'inject']);
+        gulp.watch(config.entry.script, ['js', 'inject']);
     });
 };
